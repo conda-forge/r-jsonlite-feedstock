@@ -1,4 +1,4 @@
-{% set version = "1.1" %}
+{% set version = "1.4" %}
 
 package:
   name: r-jsonlite
@@ -9,7 +9,7 @@ source:
   url:
     - http://cran.r-project.org/src/contrib/jsonlite_{{ version }}.tar.gz
     - http://cran.r-project.org/src/contrib/Archive/jsonlite/jsonlite_{{ version }}.tar.gz
-  sha256: 239b17487ad9a7a0a9bf27f78d049f539fe637278344d56bc330f75e01fc2e57
+  sha256: 56ab5c29dd86903de3d859db440d9ddb7fb9bbfc5181a6a24d27475cae9c2f87
 
 build:
   number: 0
@@ -50,3 +50,4 @@ about:
 extra:
   recipe-maintainers:
     - ocefpaf
+    - bgruening
