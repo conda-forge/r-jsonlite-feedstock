@@ -14,14 +14,16 @@ Summary: A fast JSON parser and generator optimized for statistical data and the
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-jsonlite-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-jsonlite-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-jsonlite-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-jsonlite-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-jsonlite-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-jsonlite-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-jsonlite-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-jsonlite-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-jsonlite-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-jsonlite-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-jsonlite-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-jsonlite-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-jsonlite/badges/version.svg)](https://anaconda.org/conda-forge/r-jsonlite)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-jsonlite/badges/downloads.svg)](https://anaconda.org/conda-forge/r-jsonlite)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--jsonlite-green.svg)](https://anaconda.org/conda-forge/r-jsonlite) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-jsonlite.svg)](https://anaconda.org/conda-forge/r-jsonlite) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-jsonlite.svg)](https://anaconda.org/conda-forge/r-jsonlite) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-jsonlite.svg)](https://anaconda.org/conda-forge/r-jsonlite) |
 
 Installing r-jsonlite
 =====================
