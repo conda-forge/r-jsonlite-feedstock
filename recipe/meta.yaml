@@ -1,48 +1,50 @@
-{% set version = "1.5" %}
-
+{% set version = '1.5' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-jsonlite
-  version: {{ version }}
+  version: {{ version|replace("-", "_") }}
 
 source:
   fn: jsonlite_{{ version }}.tar.gz
   url:
-    - http://cran.r-project.org/src/contrib/jsonlite_{{ version }}.tar.gz
-    - http://cran.r-project.org/src/contrib/Archive/jsonlite/jsonlite_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/jsonlite_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/jsonlite/jsonlite_{{ version }}.tar.gz
   sha256: 6490371082a387cb1834048ad8cdecacb8b6b6643751b50298c741490c798e02
 
 build:
   merge_build_host: True  # [win]
-  number: 1
-  skip: True  # [win32]
-  script: R CMD INSTALL --build .
+  number: 2
+  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - posix  # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
 
 test:
   commands:
-    - R -e "library('jsonlite')"  # [not win]
-    - R -e \"library('jsonlite')\"  # [win]
+    - $R -e "library('jsonlite')"           # [not win]
+    - "\"%R%\" -e \"library('jsonlite')\""  # [win]
 
 about:
-  home: http://arxiv.org/abs/1403.2805, https://www.opencpu.org/posts/jsonlite-a-smarter-json-encoder
+  home: https://arxiv.org/abs/1403.2805, https://www.opencpu.org/posts/jsonlite-a-smarter-json-encoder
   license: MIT
-  license_file: LICENSE
-  summary: "A fast JSON parser and generator optimized for statistical data and the web. Started
+  summary: A fast JSON parser and generator optimized for statistical data and the web. Started
     out as a fork of 'RJSONIO', but has been completely rewritten in recent versions.
     The package offers flexible, robust, high performance tools for working with JSON
     in R and is particularly powerful for building pipelines and interacting with a
@@ -50,9 +52,14 @@ about:
     2014). In addition to converting JSON data from/to R objects, 'jsonlite' contains
     functions to stream, validate, and prettify JSON data. The unit tests included with
     the package verify that all edge cases are encoded and decoded consistently for
-    use with dynamic data in systems and applications."
+    use with dynamic data in systems and applications.
+  license_family: MIT
 
 extra:
   recipe-maintainers:
     - ocefpaf
+    - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
