@@ -1,4 +1,4 @@
-{% set version = '1.6' %}
+{% set version = "1.6.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,11 +11,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/jsonlite_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/jsonlite/jsonlite_{{ version }}.tar.gz
-  sha256: 88c5b425229966b7409145a6cabc72db9ed04f8c37ee95901af0146bb285db53
+  sha256: 74921dd249857a23afabc1ad1485a63a48828e57f240f0619deb04c60f883377
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -43,6 +43,7 @@ test:
 about:
   home: https://arxiv.org/abs/1403.2805, https://www.opencpu.org/posts/jsonlite-a-smarter-json-encoder
   license: MIT
+  license_file: LICENSE
   summary: A fast JSON parser and generator optimized for statistical data and the web. Started
     out as a fork of 'RJSONIO', but has been completely rewritten in recent versions.
     The package offers flexible, robust, high performance tools for working with JSON
