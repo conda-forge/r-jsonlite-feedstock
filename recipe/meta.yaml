@@ -1,4 +1,4 @@
-{% set version = "1.8.1" %}
+{% set version = "1.8.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/jsonlite_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/jsonlite/jsonlite_{{ version }}.tar.gz
-  sha256: de2e45b693f1d892dd043f1cd2bdfecd1060e43a5392357318b1ad68248997d0
+  sha256: 677b645c081a7e004b71f0c48a1d46c1be9715163ccb6b419fbb0342a6c9cc3a
 
 build:
   merge_build_host: true  # [win]
