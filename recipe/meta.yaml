@@ -1,4 +1,4 @@
-{% set version = "1.9.0" %}
+{% set version = "1.9.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/jsonlite_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/jsonlite/jsonlite_{{ version }}.tar.gz
-  sha256: 02da3e3be655ef8b36b9ee009411bb86a3139eaf3b193416039675e054fabb91
+  sha256: a7c204449a1432b845628b3e408492a3345a4fdbc1a9aba962a96a22ae0ade2e
 
 build:
   number: 0
